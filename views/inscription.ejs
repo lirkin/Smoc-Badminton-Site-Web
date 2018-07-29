@@ -1,0 +1,49 @@
+<!-- views/inscription.ejs -->
+<!doctype html>
+<html>
+	<head>
+		<title> Inscription</title>
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+		<style> body { padding-top:80px; } </style>
+	</head>
+	
+	<body>
+		<div class="container">
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="text-center"> <h1> <span class="fa fa-sign-in"> </span> Inscription </h1> </div>
+
+				<!-- Permet de montrer les messages flash venant du serveur (message d'erreur) -->
+				<% if (message.length > 0) { %>
+					<div class="alert alert-danger"> 
+						<span class="glyphicon glyphicon-exclamation-sign"></span> 
+						<%= message %>
+					</div>
+				<% } %>
+
+				<!-- formulaire d'inscription -->
+				<form action="/inscription" method="post">
+					<div class="form-group">
+						<label>Nom d'utilisateur</label>
+						<input type="text" class="form-control" name="username">
+					</div>
+
+					<div class="form-group">
+						<label>Mot de passe</label>
+						<input type="password" class="form-control" name="password">
+					</div>
+
+					<div class="text-center"> <button type="submit" class="btn btn-warning btn-lg">Inscription</button> </div>
+				</form>
+
+				<hr>
+
+			    <div class="text-center"> 
+					<p> Tu as déjà un compte? <a href="/connexion"> Connecte toi </a></p>
+					<p> Tu veux revenir à l'accueil? <a href="/"> C'est par ici </a></p>
+				</div>
+
+			</div>
+		</div>
+	</body>
+</html>

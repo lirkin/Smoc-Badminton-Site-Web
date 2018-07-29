@@ -1,0 +1,30 @@
+<!-- views/accueil.ejs -->
+
+<!doctype html>
+<html>
+    <head>
+        <title>Accueil</title>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+        <style> body { padding-top:80px; } </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <div class="jumbotron text-center">
+                <h1><span class="fa fa-home"></span> Accueil </h1>
+
+                <% if (user) { %>
+                    <p> Bonjour <%= user.username %>, que veux-tu faire? </p>
+                    <a href="/profil" class="btn btn-default"><span class="fa fa-user"></span> Profil </a> <br>
+                    <a href="/deconnexion" class="btn btn-default"><span class="fa fa-sign-out"></span> Déconnexion </a> <br>
+                <% } else { %>
+                    <p>Inscris ou connecte toi:</p>
+                    <a href="/connexion" class="btn btn-default"><span class="fa fa-sign-in"></span> Connexion </a> <br>
+                    <a href="/inscription" class="btn btn-default"><span class="fa fa-sign-in"></span> Inscription </a> <br>
+                <% } %>
+                
+            </div>
+        </div>
+    </body>
+</html>
